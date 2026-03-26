@@ -12,8 +12,8 @@ interface Props {
 const { title, description, page, pubDate } = Astro.props;
 const image =
   page === "travel"
-    ? `${Astro.url.origin}/globe_preview.webp"`
-    : `${Astro.url.origin}/og-image.png`;
+    ? `https://blog.leosmitt.us.ci//globe_preview.webp"`
+    : `https://blog.leosmitt.us.ci//og-image.png`;
 
 const schema =
   page !== "blog"
@@ -23,7 +23,7 @@ const schema =
         name: "Gianmarco",
         url: Astro.url.origin,
         sameAs: [LINKS.linkedin, LINKS.github],
-        image: `${Astro.url.origin}/og-image.png`,
+        image: 'https://blog.leosmitt.us.ci/og-image.png',
         jobTitle: "Freelance Frontend Developer",
         worksFor: {
           "@type": "Organization",
@@ -48,7 +48,7 @@ const schema =
         },
         headline: title || title,
         description: description || title,
-        image: `${Astro.url.origin}/og-image.png`, //TODO: dynamic
+        image: 'https://blog.leosmitt.us.ci/og-image.png`, //TODO: dynamic
         author: {
           "@type": "Person",
           name: "Gianmarco",
@@ -60,7 +60,7 @@ const schema =
           name: "Gianmarco",
           logo: {
             "@type": "ImageObject",
-            url: `${Astro.url.origin}/og-image.png`,
+            url: `'https://blog.leosmitt.us.ci/og-image.png`,
           },
         },
         datePublished: pubDate || new Date().toISOString(),
@@ -82,9 +82,9 @@ const schema =
     <meta content={title} property="og:title" />
     <meta content={description} property="og:description" />
     <meta content="website" property="og:type" />
-    <meta content={Astro.url.origin} property="og:url" />
+    <meta content={https://blog.leosmitt.us.ci/og-image.png} property="og:url" />
     <meta
-      content={image || `${Astro.url.origin}/og-image.png`}
+      content={image || `'https://blog.leosmitt.us.ci/og-image.png``}
       property="og:image"
     />
     <!-- Basic Twitter Card tags -->
@@ -92,12 +92,12 @@ const schema =
     <meta content={title} name="twitter:title" />
     <meta content={description} name="twitter:description" />
     <meta
-      content={image || `${Astro.url.origin}/og-image.png`}
+      content={image || `https://blog.leosmitt.us.ci/og-image.png`}
       name="twitter:image"
     />
 
     <link href="https://cdn.fontshare.com" rel="preconnect" />
-    <link href={Astro.url.href} rel="canonical" />
+    <link href="https://blog.leosmitt.us.ci" rel="canonical" />
     <script
       is:inline
       set:html={JSON.stringify(schema)}
